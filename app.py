@@ -64,7 +64,7 @@ for i in range(1, len(data)):
 
     equity.append(cash + position * price)
 
-final = cash + position * float(data.iloc[-1]["Close"])
+final = cash + position * float(data["Close"].iloc[-1])
 ret = (final - float(capital)) / float(capital) * 100
 wins = sum(1 for t in trades if t["P&L (€)"] > 0)
 winrate = (wins / len(trades) * 100) if trades else 0
